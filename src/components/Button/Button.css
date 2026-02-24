@@ -16,3 +16,7 @@
   height: 50px;
   width: 100px;
 }
+
+.button:active {
+  background-color: #EDEFF2;
+}

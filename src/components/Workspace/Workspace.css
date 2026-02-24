@@ -7,4 +7,10 @@
     border-right: 4px solid gray;
     border-radius: 10px;
     box-sizing: border-box;
+    align-items: center;
+    /* justify-content: center; */
+
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 10% 80% 10%;
 }

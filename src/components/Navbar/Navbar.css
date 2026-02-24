@@ -1,0 +1,35 @@
+.logo {
+    height: 5vmin;
+}
+
+nav {
+    background-color: #ffffff;
+    border-bottom: 6px solid lightgray;
+    border-left: 3px solid lightgray;
+    border-right: 3px solid lightgray;
+    border-radius: 40px;
+    margin: 15px 15px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.navbar_left {
+    padding: 20px;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap:30px;
+}
+
+
+.navbar_right {
+    padding: 20px;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap:30px;
+}

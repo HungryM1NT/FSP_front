@@ -14,7 +14,7 @@ function Navbar() {
                 <img src={logo} className="logo" alt="logo" />
             </div>
             <Button
-                name={"Upload"} onclick={() => {console.log("todo")}}
+                name={"Upload"} onclick={() => {console.log(typeof(NaN))}}
             />
             <Button
                 name={"Files"} onclick={() => {navigate("/explorer")}}

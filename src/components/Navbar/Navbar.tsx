@@ -1,26 +1,29 @@
-import React from 'react';
+import { useNavigate  } from "react-router-dom";
 import logo from '../../assets/home.svg';
 import './Navbar.css';
 import Button from '../Button/Button';
 
+
+
 function Navbar() {
-  return (
+    const navigate = useNavigate();
+    return (
     <nav className='navbar'>
         <div className='navbar_left'>
-            <a className='navbar_home' href="/">
+            <div className='navbar_home' onClick={() => {navigate("/")}}>
                 <img src={logo} className="logo" alt="logo" />
-            </a>
+            </div>
             <Button
-                name={"Upload"}
+                name={"Upload"} onclick={() => {console.log("todo")}}
             />
             <Button
-                name={"Files"}
+                name={"Files"} onclick={() => {navigate("/explorer")}}
             />
         </div>
         <div className='navbar_right'>
             <span className='username'>Ilya Ablyazov</span>
             <Button
-                name={"Log out"}
+                name={"Log out"} onclick={() => {navigate("/Auth")}}
             />
         </div>
     </nav>

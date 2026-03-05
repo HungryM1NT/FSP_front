@@ -10,6 +10,7 @@ function Doc_Info() {
         <span className='doc-time'>22:39 24.02.2026</span>
         <Button
             name={"Delete"}
+            onclick={() => {console.log('todo')}}
         />
     </div>
   );

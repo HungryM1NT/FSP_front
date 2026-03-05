@@ -7,9 +7,11 @@ function Controls() {
   return (
     <div>
         <Button
-            name={"Prev"}/>
+            name={"Prev"}
+            onclick={() => {console.log('todo')}}/>
         <Button
-            name={"Next"}/>
+            name={"Next"}
+            onclick={() => {console.log('todo')}}/>
     </div>
   );
 };

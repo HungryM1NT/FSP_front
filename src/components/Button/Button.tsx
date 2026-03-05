@@ -1,13 +1,16 @@
-import React from 'react';
 import './Button.css';
 
 interface Props {
-  name: string
+  name: string,
+  onclick: () => void,
 }
 
 function Button(props: Props) {
   return (
-    <button className='button'>
+    <button
+      className='button'
+      onClick={props.onclick}
+    >
         {props.name}
     </button>
   );

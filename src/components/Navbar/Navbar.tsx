@@ -13,6 +13,9 @@ function Navbar() {
             <Button
                 name={"Upload"}
             />
+            <Button
+                name={"Files"}
+            />
         </div>
         <div className='navbar_right'>
             <span className='username'>Ilya Ablyazov</span>

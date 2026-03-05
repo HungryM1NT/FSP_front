@@ -4,32 +4,37 @@ import AuthForm from '../../components/AuthForm/AuthForm';
 import { Props } from '../../components/AuthForm/AuthForm';
 
 
-const loginForm: Props = {
-  title: "Log in",
-  lines: [
-    {lineName: "Username", inputType: "text", isRequired: true, minLength: 4},
-    {lineName: "Password", inputType: "password", isRequired: true},
-  ]
-};
-
-const registerForm: Props = {
-  title: "Registration",
-  lines: [
-    {lineName: "Username", inputType: "text", isRequired: true, minLength: 4},
-    {lineName: "Email", inputType: "email", isRequired: true},
-    {lineName: "Password", inputType: "password", isRequired: true, minLength: 8},
-    {lineName: "Repeat password", inputType: "password", isRequired: true, minLength: 8},
-  ]
-};
-
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
+  
+  let loginForm: Props = {
+    title: "Login",
+    lines: [
+      {lineName: "Username", inputType: "text", isRequired: true, minLength: 4},
+      {lineName: "Password", inputType: "password", isRequired: true},
+    ],
+    button: {lineName: "Sign in", onclick: () => {}},
+    extraLine: <p>Don't have an account? <span onClick={() => {setIsLogin(false)}}>Sign up</span></p>
+  };
+
+  let registerForm: Props = {
+    title: "Registration",
+    lines: [
+      {lineName: "Username", inputType: "text", isRequired: true, minLength: 4},
+      {lineName: "Email", inputType: "email", isRequired: true},
+      {lineName: "Password", inputType: "password", isRequired: true, minLength: 8},
+      {lineName: "Repeat password", inputType: "password", isRequired: true, minLength: 8},
+    ],
+    button: {lineName: "Create account", onclick: () => {}},
+    extraLine: <p>Have already an account? <span onClick={() => {setIsLogin(true)}}>Sign in</span></p>
+  };
+
   return (
-    <>
-      {!isLogin ?
+    <div className='auth_page'>
+      {isLogin ?
       (<AuthForm {...loginForm}/>) : 
       (<AuthForm {...registerForm}/>)}
-      </>
+      </div>
     );
 }
 

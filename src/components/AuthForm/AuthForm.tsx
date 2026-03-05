@@ -1,7 +1,12 @@
 import './AuthForm.css';
-import { HTMLInputTypeAttribute } from 'react';
+import { HTMLInputTypeAttribute, ReactElement } from 'react';
 import Button from '../Button/Button';
 
+
+interface Button {
+    lineName: string,
+    onclick: () => void,
+}
 
 interface Line {
     lineName: string,
@@ -12,28 +17,33 @@ interface Line {
 
 export interface Props {
     title: string,
-    lines: Array<Line>
+    lines: Array<Line>,
+    button: Button,
+    extraLine?: ReactElement
 }
 
 function AuthForm(props: Props) {
   return (
     <>
-      <div className='auth_form'>
+      <div className='auth_div'>
         <p className='form_title'>{props.title}</p>
-        <form>
+        <form className='auth_form'>
             {props.lines.map(
                 (line: Line) => 
-                <label>
-                    {line.lineName}
+                <div className='field'>
+                    <label>
+                        {line.lineName}
+                    </label>
                     <input
                         type={line.inputType}
                         required={line.isRequired}
                         minLength={line.minLength}
                     />
-                </label>
+                </div>
             )}
-            <Button name={"TEMP"} onclick={() => {}}/>
         </form>
+        <Button name={props.button.lineName} onclick={props.button.onclick}/>
+        {props.extraLine}
       </div>
     </>
   );

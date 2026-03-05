@@ -23,7 +23,7 @@ function Navbar() {
         <div className='navbar_right'>
             <span className='username'>Ilya Ablyazov</span>
             <Button
-                name={"Log out"} onclick={() => {navigate("/Auth")}}
+                name={"Log out"} onclick={() => {navigate("/auth")}}
             />
         </div>
     </nav>

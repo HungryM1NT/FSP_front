@@ -1,0 +1,17 @@
+.filesys {
+    background-color: #fff;
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-bottom: 4px solid gray;
+    border-right: 4px solid gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    /* justify-content: center; */
+
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 10% 80% 10%;
+}

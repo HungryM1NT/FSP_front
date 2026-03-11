@@ -22,4 +22,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.auth_input {
+    width: 20vw;
+    height: 25px;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+.auth_label {
+    margin-bottom: 7px;
 }

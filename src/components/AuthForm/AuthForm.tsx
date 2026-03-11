@@ -31,10 +31,10 @@ function AuthForm(props: Props) {
             {props.lines.map(
                 (line: Line) => 
                 <div className='field'>
-                    <label>
+                    <label className='auth_label'>
                         {line.lineName}
                     </label>
-                    <input
+                    <input className='auth_input'
                         type={line.inputType}
                         required={line.isRequired}
                         minLength={line.minLength}

@@ -1,0 +1,17 @@
+.explorer_container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "navbar"
+    "filesys";
+  gap: 10px;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.filesys {
+  grid-area: filesys;
+}

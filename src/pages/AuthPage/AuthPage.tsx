@@ -14,7 +14,7 @@ function AuthPage() {
       {lineName: "Password", inputType: "password", isRequired: true},
     ],
     button: {lineName: "Sign in", onclick: () => {}},
-    extraLine: <p>Don't have an account? <span className='auth_link' onClick={() => {setIsLogin(false)}}>Sign up</span></p>
+    extraLine: <p>Don't have an account? <span onClick={() => {setIsLogin(false)}}>Sign up</span></p>
   };
 
   let registerForm: Props = {
@@ -26,7 +26,7 @@ function AuthPage() {
       {lineName: "Repeat password", inputType: "password", isRequired: true, minLength: 8},
     ],
     button: {lineName: "Create account", onclick: () => {}},
-    extraLine: <p>Have already an account? <span className='auth_link' onClick={() => {setIsLogin(true)}}>Sign in</span></p>
+    extraLine: <p>Have already an account? <span onClick={() => {setIsLogin(true)}}>Sign in</span></p>
   };
 
   return (

@@ -1,24 +1,26 @@
 import './AuthForm.css';
-import { HTMLInputTypeAttribute, ReactElement } from 'react';
+import { HTMLInputTypeAttribute, ReactElement, ChangeEvent, FormEvent } from 'react';
 import Button from '../Button/Button';
 
 
-interface Button {
+interface AuthButtonProps {
     lineName: string,
-    onclick: () => void,
+    onclick: (e: any) => void,
 }
 
 interface Line {
     lineName: string,
     inputType: HTMLInputTypeAttribute,
     isRequired?: boolean,
-    minLength?: number
+    minLength?: number,
+    value: string,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export interface Props {
     title: string,
     lines: Array<Line>,
-    button: Button,
+    button: AuthButtonProps,
     extraLine?: ReactElement
 }
 
@@ -27,9 +29,9 @@ function AuthForm(props: Props) {
     <>
       <div className='auth_div'>
         <p className='form_title'>{props.title}</p>
-        <form className='auth_form'>
+        <form className='auth_form' onSubmit={props.button.onclick}>
             {props.lines.map(
-                (line: Line) => 
+                (line: Line, index: number) => 
                 <div className='field'>
                     <label className='auth_label'>
                         {line.lineName}
@@ -38,12 +40,14 @@ function AuthForm(props: Props) {
                         type={line.inputType}
                         required={line.isRequired}
                         minLength={line.minLength}
+                        value={line.value}
+                        onChange={line.onChange}
                     />
                 </div>
             )}
+            <Button name={props.button.lineName} onclick={() => {}}/>
+            {props.extraLine}
         </form>
-        <Button name={props.button.lineName} onclick={props.button.onclick}/>
-        {props.extraLine}
       </div>
     </>
   );

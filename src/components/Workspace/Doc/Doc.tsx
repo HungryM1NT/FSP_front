@@ -1,11 +1,13 @@
 import React from 'react';
 import './Doc.css';
-import testimage from './doc1.jpg'
 
+interface DocProps {
+    imageUrl: string;
+}
 
-function Doc() {
+function Doc({ imageUrl }: DocProps) {
   return (
-    <img src={testimage} className='doc-image'/>
+    <img src={imageUrl} className='doc-image' alt="Document"/>
   );
 };
 

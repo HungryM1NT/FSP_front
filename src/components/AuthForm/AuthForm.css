@@ -35,3 +35,9 @@
 .auth_label {
     margin-bottom: 7px;
 }
+
+.auth_form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

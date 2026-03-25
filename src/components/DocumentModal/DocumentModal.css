@@ -1,0 +1,142 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(2px);
+}
+
+.modal_content {
+    background-color: white;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal_image_section {
+    flex: 1 1 60%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.doc_photo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 40px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.nav_btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.prev_btn { left: 20px; }
+.next_btn { right: 20px; }
+
+.modal_data_section {
+    flex: 1 1 40%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.modal_data_section h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.data_field {
+    margin-bottom: 15px;
+}
+
+.data_field label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.data_field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.data_field input:focus {
+    outline: none;
+    border-color: #ccc;
+}
+
+.modal_actions {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete_doc_btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.delete_doc_btn:hover {
+    background-color: #c9302c;
+}

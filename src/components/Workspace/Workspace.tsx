@@ -24,7 +24,6 @@ function Workspace({ documentData, onDelete }: WorkspaceProps) {
     <div className='workspace'>
         <Doc_Info data={documentData} onDelete={onDelete}/>
         <Doc imageUrl={documentData.file_url}/>
-        <Controls/>
     </div>
   );
 };

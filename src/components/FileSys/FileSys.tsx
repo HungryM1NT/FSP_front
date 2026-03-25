@@ -184,7 +184,7 @@ function FileSys() {
                 className={`filter_toggle_btn ${showFilters ? 'active' : ''}`}
                 onClick={() => setShowFilters(!showFilters)}
               >
-                Фильтры ⚙️
+                Фильтры
               </button>
 
               <div className="sort_controls_compact">

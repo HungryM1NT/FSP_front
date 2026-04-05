@@ -156,6 +156,17 @@ function FileSys() {
     }
   };
 
+  const handleUpdateDocument = async (docId: number, updatedData: { file_name: string; ocr_name: string; ocr_date: string; ocr_sum: string }) => {
+    try {
+        await api.put(`/documents/${docId}`, updatedData);
+        setDocuments(prevDocs => prevDocs.map(doc => 
+            doc.id === docId ? { ...doc, ...updatedData } : doc
+        ));
+    } catch (error) {
+        console.error("Ошибка при обновлении:", error);
+        alert("Не удалось сохранить изменения.");
+    }
+  };
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedTypes([]);
@@ -284,6 +295,7 @@ function FileSys() {
         currentIndex={currentViewIndex}
         onNavigate={setCurrentViewIndex}
         onDelete={handleDeleteDocument}
+        onUpdate={handleUpdateDocument} // НОВЫЙ ПРОПС
       />
     </div>
   );

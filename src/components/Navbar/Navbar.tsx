@@ -59,7 +59,7 @@ function Navbar({ onUpload }: NavbarProps) {
                         type="file" 
                         style={{ display: 'none' }} 
                         ref={fileInputRef}
-                        accept="image/*"
+                        accept="image/*,application/pdf" 
                         onChange={handleFileChange}
                     />
                     <Button name={"Upload"} onclick={handleUploadClick} />
